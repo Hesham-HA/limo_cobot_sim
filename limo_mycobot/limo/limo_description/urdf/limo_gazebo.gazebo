@@ -70,7 +70,7 @@
             <visualize>true</visualize>
             <update_rate>10.0</update_rate>
             <camera name="head">
-              <horizontal_fov>1.3962634</horizontal_fov>
+              <horizontal_fov>1.185</horizontal_fov>
               <image>
                   <width>640</width>
                   <height>480</height>
@@ -83,7 +83,7 @@
             </camera>
 
             <plugin name="gazebo_ros_depth_camera_sensor" filename="libgazebo_ros_openni_kinect.so">
-              <baseline>0.2</baseline>
+              <baseline>0.04</baseline>
               <alwaysOn>true</alwaysOn>
               <!-- Keep this zero, update_rate in the parent <sensor> tag
                 will control the frame rate. -->
@@ -97,7 +97,7 @@
               <frameName>depth_link</frameName>
               <cameraname>depth_camera_link</cameraname>
               
-              <pointCloudCutoff>0.5</pointCloudCutoff>
+              <pointCloudCutoff>0.3</pointCloudCutoff>
               <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
               <distortionK1>0</distortionK1>
               <distortionK2>0</distortionK2>
