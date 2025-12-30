@@ -7,31 +7,40 @@ arm_controller:
     - joint5_to_joint4
     - joint6_to_joint5
     - joint6output_to_joint6
+  constraints:
+    goal_time: 2.0                   # Give the arm more time to settle
+    stopped_velocity_tolerance: 0.05 # Allow some micro-movement at the end
+    joint2_to_joint1: {trajectory: 0.2, goal: 0.02} # Loosen goal to 0.02 rad
+    joint3_to_joint2: {trajectory: 0.2, goal: 0.02}
+    joint4_to_joint3: {trajectory: 0.2, goal: 0.02}
+    joint5_to_joint4: {trajectory: 0.2, goal: 0.02}
+    joint6_to_joint5: {trajectory: 0.2, goal: 0.02}
+    joint6output_to_joint6: {trajectory: 0.2, goal: 0.02}
   gains:
     joint2_to_joint1:
-      p: 100
-      d: 1
-      i: 1
+      p: 1000
+      d: 10
+      i: 0.1
       i_clamp: 1
     joint3_to_joint2:
-      p: 100
-      d: 1
-      i: 1
+      p: 1000
+      d: 10
+      i: 0.1
       i_clamp: 1
     joint4_to_joint3:
-      p: 100
-      d: 1
-      i: 1
+      p: 500
+      d: 5
+      i: 0.1
       i_clamp: 1
     joint5_to_joint4:
-      p: 100
-      d: 1
-      i: 1
+      p: 200
+      d: 2
+      i: 0.01
       i_clamp: 1
     joint6_to_joint5:
       p: 100
       d: 1
-      i: 1
+      i: 0.01
       i_clamp: 1
     joint6output_to_joint6:
       p: 100
